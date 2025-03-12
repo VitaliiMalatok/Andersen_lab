@@ -6,6 +6,7 @@ public class InputValidationMethods {
         if (n > 7) {
             System.out.println("Hello");
         }
+        System.out.println("Sorry, you entered a number less than 7.");
     }
 
     public static void checkName(String name) {
