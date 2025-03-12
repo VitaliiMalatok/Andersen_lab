@@ -4,8 +4,7 @@ import com.gmail.vitali.malatok.java.service.RunTaskService;
 
 import java.util.Scanner;
 
-import static com.gmail.vitali.malatok.java.model.InputValidationMethods.checkName;
-import static com.gmail.vitali.malatok.java.model.InputValidationMethods.checkNumber;
+import static com.gmail.vitali.malatok.java.model.InputValidationMethods.*;
 
 public class RunTaskServiceImpl implements RunTaskService {
     @Override
@@ -17,9 +16,18 @@ public class RunTaskServiceImpl implements RunTaskService {
         checkNumber(number);
         // Task 2: Check name
         System.out.print("Enter a name: ");
-        scanner.nextLine(); // Consume the leftover newline
+        scanner.nextLine();
         String name = scanner.nextLine();
         checkName(name);
+        // Task 3: Find multiples of 3 in an array
+        System.out.print("Enter numbers separated by spaces: ");
+        String[] input = scanner.nextLine().split(" ");
+        int[] numbers = new int[input.length];
+        for (int i = 0; i < input.length; i++) {
+            numbers[i] = Integer.parseInt(input[i]);
+        }
+        checkArraysValue(numbers);
+        scanner.close();
     }
 }
 
